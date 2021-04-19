@@ -1,6 +1,6 @@
-# Notes-App
+# Social-App
 
-Social App is a Kotlin based Android Application. It uses Firebase realtime daabase and uses Coroutines.
+Social App is a Kotlin based Android Application. It uses Firebase real-time database and uses Coroutines.
 
 #### App Screenshots
 <p float="left">
