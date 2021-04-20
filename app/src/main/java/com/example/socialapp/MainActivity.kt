@@ -74,8 +74,7 @@ class MainActivity : AppCompatActivity(), IPostAdapter {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.signOut)
-        {
+        if (item.itemId == R.id.signOut) {
             Log.i(TAG, "Logout")
             val builder = AlertDialog.Builder(this)
             //set title for alert dialog
@@ -88,16 +87,20 @@ class MainActivity : AppCompatActivity(), IPostAdapter {
             builder.setPositiveButton("Yes") { dialogInterface, which ->
                 signout()
             }
+
             //performing cancel action
             builder.setNeutralButton("Cancel") { dialogInterface, which ->
 
             }
+
             //performing negative action
             builder.setNegativeButton("No") { dialogInterface, which ->
 
             }
+
             // Create the AlertDialog
             val alertDialog: AlertDialog = builder.create()
+
             // Set other dialog properties
             alertDialog.setCancelable(false)
             alertDialog.show()
@@ -109,7 +112,8 @@ class MainActivity : AppCompatActivity(), IPostAdapter {
 
         auth.signOut()
         val signInActivityIntent = Intent(this, SignInActivity::class.java)
-        signInActivityIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        signInActivityIntent.flags =
+            Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(signInActivityIntent)
         finish()
     }
