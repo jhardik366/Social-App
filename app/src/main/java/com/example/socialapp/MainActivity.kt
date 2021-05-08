@@ -11,6 +11,8 @@ import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.socialapp.Dao.PostDao
 import com.example.socialapp.models.Post
+import com.facebook.FacebookSdk
+import com.facebook.login.LoginManager
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
@@ -115,6 +117,9 @@ class MainActivity : AppCompatActivity(), IPostAdapter {
         signInActivityIntent.flags =
             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(signInActivityIntent)
+
+        FacebookSdk.sdkInitialize(this.getApplicationContext());
+        LoginManager.getInstance().logOut()
         finish()
     }
 }
