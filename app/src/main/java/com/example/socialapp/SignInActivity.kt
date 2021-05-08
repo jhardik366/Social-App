@@ -102,6 +102,8 @@ class SignInActivity : AppCompatActivity() {
                 // Get Email
                 val name: String? = result.user.displayName
                 Toast.makeText(this, "Welcome $name!", Toast.LENGTH_LONG).show()
+                val currentUser = auth.currentUser
+                updateUI(currentUser)
             }
     }
 

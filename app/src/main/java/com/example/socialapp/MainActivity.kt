@@ -76,6 +76,13 @@ class MainActivity : AppCompatActivity(), IPostAdapter {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(item.itemId == R.id.userProfile)
+        {
+            val intent = Intent(this, UserProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         if (item.itemId == R.id.signOut) {
             Log.i(TAG, "Logout")
             val builder = AlertDialog.Builder(this)
